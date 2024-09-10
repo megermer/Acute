@@ -1,10 +1,19 @@
 # Acute
-A flashcard-based study application that utilizes spaced-repetition algorithms.
+A SM2 algorithm that uses NLP that
 
-to run venv
+## Running venv
 
-install: py -m venv .venv
-to create venv env: python -m venv {env-name}
-to activate: {env-name}\Scripts\activate
+Install: 
+`py -m venv .venv`
+> Creates a .venv folder that allows you to create and run venv envs
 
-to deactivate: deactivate
+Create the env:
+`python -m venv {env-name}`
+> Add this to .gitignore
+> So our venv folders with different names won't cause an issue
+
+Activate env: 
+`{env-name}\Scripts\activate`
+
+Deactivate env: 
+`deactivate`
