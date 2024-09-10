@@ -1,2 +1,2 @@
 # Acute
-A flashcard-based study application that utilizes SL algorithms
+A flashcard-based study application that utilizes spaced-repetition algorithms.
