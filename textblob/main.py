@@ -4,12 +4,16 @@ from sentence_transformers import SentenceTransformer, util
 model = SentenceTransformer('bert-base-nli-mean-tokens')
 
 # Example sentences to compare
-sentence1 = "I love programming in Python."
-sentence2 = "I do enjoy writing Anaconda code."
+# sentence1 = "Python is used mostly for scripting."
+# sentence2 = "Java is used mostly for scripting."
+
+sentence1 = "The language mostly used for scripting is Python"
+sentence2 = "Python is mostly used for scripting"
+
 
 # Generate embeddings for each sentence
-embedding1 = model.encode(sentence1, convert_to_tensor=True)
-embedding2 = model.encode(sentence2, convert_to_tensor=True)
+embedding1 = model.encode(sentence1, convert_to_tensor=True, clean_up_tokenization_spaces=True)
+embedding2 = model.encode(sentence2, convert_to_tensor=True, clean_up_tokenization_spaces=True)
 
 # Compute the cosine similarity between the two sentence embeddings
 similarity = util.cos_sim(embedding1, embedding2)
@@ -18,7 +22,7 @@ similarity = util.cos_sim(embedding1, embedding2)
 print(f"Similarity score: {similarity.item()}")
 
 # Set a threshold for similarity (you can tweak this based on your use case)
-threshold = 0.75
+threshold = 0.90
 
 # Check if the sentences are saying the same thing
 if similarity.item() >= threshold:
