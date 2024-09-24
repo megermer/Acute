@@ -11,6 +11,12 @@ function App() {
   // Selecting the algorithm with the radio btns
   const [selectedValue, setSelectedValue] = useState(0);
 
+  // Display SM2 btns
+  const [displayBtns, setDisplayBtns] = useState(() => {
+    const savedAlgorithm = localStorage.getItem("pickAlgorithm");
+    return savedAlgorithm ? JSON.parse(savedAlgorithm) : false;
+  });
+
   // Will display the SM2 or AI influenced interface
   const [pickAlgorithm, setPickAlgorithm] = useState(() => {
     const savedAlgorithm = localStorage.getItem("pickAlgorithm");
@@ -62,14 +68,16 @@ function App() {
   // handleChange for radio btn
   const handleChangeRadio = (event) => {
     console.log(event.target.value);
-    setSelectedValue(event.target.value);
+
+    // Converting to integer then assigning
+    setSelectedValue(parseInt(event.target.value, 10));
   };
 
   /* In charge of showing next card
     Will not show next card if input box is empty
   */
   const displayCards = () => {
-    if (!inputValue) {
+    if (!inputValue && pickAlgorithm === 2) {
       return;
     }
 
@@ -80,6 +88,11 @@ function App() {
       setInputValue("");
 
       setDisplayingAnswer(false);
+
+      if (pickAlgorithm === 1) {
+        setDisplayingAnswer((prevState) => !prevState);
+        displayAnswerSM2()
+      }
     } else {
       alert("You've completed your study cards!");
     }
@@ -94,9 +107,18 @@ function App() {
     console.log(inputValue);
   };
 
+  const displayAnswerSM2 = () => {
+    setDisplayingAnswer((prevState) => !prevState);
+
+    setDisplayBtns((prevState) => !prevState);
+
+    console.log(inputValue);
+  };
+
   // Once btn is pushed, the right template will be shown
   const displayTemplate = () => {
     setPickAlgorithm(selectedValue);
+    console.log("Template picked:", selectedValue);
   };
 
   // Radio btn controls
@@ -110,8 +132,9 @@ function App() {
 
   return (
     <div id="root-page">
-      {pickAlgorithm !== 0 ? (
+      {pickAlgorithm === 2 ? (
         <section id="cards-cont">
+          {console.log("pickAlgorithm value:", pickAlgorithm)}
           <div className="card" id="question-card">
             <p className="card-title">Question</p>
             <p className="card-content">{displayedCard.question}</p>
@@ -120,10 +143,10 @@ function App() {
               label="Answer"
               variant="outlined"
               multiline
-              maxRows={2}
+              maxRows={1}
               value={inputValue}
               onChange={handleChange}
-              sx={{ width: "75%", m: "0px", p: "0px" }}
+              sx={{ width: "75%", height: "25%", m: "0px", p: "0px" }}
             />
           </div>
           <div
@@ -153,23 +176,95 @@ function App() {
             </Button>
           </Stack>
         </section>
+      ) : pickAlgorithm === 1 ? (
+        <section id="cards-cont">
+          {console.log("pickAlgorithm value:", pickAlgorithm)}
+          <div className="card" id="question-card">
+            <p className="card-title">Question</p>
+            <p className="card-content">{displayedCard.question}</p>
+          </div>
+          <div
+            className="card"
+            id="answer-card"
+            style={{ visibility: displayingAnswer ? "visible" : "hidden" }}
+          >
+            <p className="card-title">Answer</p>
+            <p className="card-content">{displayedCard.answer}</p>
+          </div>
+          <Stack direction="row" spacing={2} id="buttons-sm2">
+            {displayBtns === true ? (
+              <Stack direction="row" spacing={2} id="sm2-btns">
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={displayCards}
+                  sx={{ bgcolor: "#1976d2" }}
+                >
+                  Impossible
+                </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={displayCards}
+                  sx={{ bgcolor: "#1976d2" }}
+                >
+                  Hard
+                </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={displayCards}
+                  sx={{ bgcolor: "#1976d2" }}
+                >
+                  Normal
+                </Button>
+                <Button
+                  variant="contained"
+                  color="success"
+                  onClick={displayCards}
+                  sx={{ bgcolor: "#1976d2" }}
+                >
+                  Easy
+                </Button>
+              </Stack>
+            ) : (
+              <Button
+                variant="contained"
+                color="success"
+                onClick={displayAnswerSM2}
+                sx={{ bgcolor: "#1976d2" }}
+              >
+                {displayingAnswer ? "Hide" : "Show"}
+              </Button>
+            )}
+          </Stack>
+        </section>
       ) : (
         <section id="pick-algorithm">
+          <div>{console.log("pickAlgorithm value:", pickAlgorithm)}</div>
           <p id="ai-title">Select your Template</p>
           <div>
             <p>SM2</p>
-            <Radio {...controlProps(1)} color="secondary" sx={{p: '0px', m: '0px'}}/>
+            <Radio
+              {...controlProps(1)}
+              color="secondary"
+              sx={{ p: "0px", m: "0px" }}
+            />
           </div>
           <div>
             <p>AI + SM2</p>
-            <Radio {...controlProps(2)} color="success" sx={{p: '0px', m: '0px'}} />
+            <Radio
+              {...controlProps(2)}
+              color="success"
+              sx={{ p: "0px", m: "0px" }}
+            />
           </div>
           <div id="btn-cont">
             <Button
               variant="contained"
               color="success"
               onClick={displayTemplate}
-              sx={{ bgcolor: "#1976d2", width: '30%'}}
+              sx={{ bgcolor: "#1976d2", width: "30%" }}
             >
               Confirm
             </Button>
