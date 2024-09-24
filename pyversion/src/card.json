@@ -1,0 +1,17 @@
+[
+    {
+        "name": "General",
+        "question": "How are you",
+        "answer": "I am good"
+    },
+    {
+        "name": "Continue",
+        "question": "That's cool",
+        "answer": "yeah"
+    },
+    {
+        "name": "Ending",
+        "question": "Anyway goodbye",
+        "answer": "goodbye"
+    }
+]
