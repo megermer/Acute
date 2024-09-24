@@ -1,0 +1,81 @@
+body, p, div {
+    margin: 0px;
+    padding: 0px;
+}
+
+#root-page{
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E3E3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pick-algorithm {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ai-selection {
+    width: 25%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25%
+}
+
+#cards-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 5%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 30%;
+    height: 25%;
+    border-radius: 1rem;
+    padding: 0% 1.5% 0% 1.5%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    gap: 10%;
+}
+
+#question-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-weight: 450;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.card-content { 
+    line-height: 1.5rem;
+}
+
+#buttons {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+}
