@@ -155,24 +155,25 @@ function App() {
         </section>
       ) : (
         <section id="pick-algorithm">
-          <div id="ai-selection">
-            <div>
-              <p>SM2</p>
-              <Radio {...controlProps(1)} color="secondary" />
-            </div>
-            <div>
-              <p>AI+SM2</p>
-              <Radio {...controlProps(2)} color="success" />
-            </div>
+          <p id="ai-title">Select your Template</p>
+          <div>
+            <p>SM2</p>
+            <Radio {...controlProps(1)} color="secondary" sx={{p: '0px', m: '0px'}}/>
           </div>
-          <Button
-            variant="contained"
-            color="success"
-            onClick={displayTemplate}
-            sx={{ bgcolor: "#1976d2" }}
-          >
-            Confirm
-          </Button>
+          <div>
+            <p>AI + SM2</p>
+            <Radio {...controlProps(2)} color="success" sx={{p: '0px', m: '0px'}} />
+          </div>
+          <div id="btn-cont">
+            <Button
+              variant="contained"
+              color="success"
+              onClick={displayTemplate}
+              sx={{ bgcolor: "#1976d2", width: '30%'}}
+            >
+              Confirm
+            </Button>
+          </div>
         </section>
       )}
     </div>
