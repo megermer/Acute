@@ -46,7 +46,7 @@ function App() {
       ? JSON.parse(savedCard)
       : {
           question:
-            'Questions will be displayed in this box. What color is the inside of a watermelon before its cut? Once you typed the answer, hit "Show"',
+            `Questions will be displayed in this box. What color is the inside of a watermelon before its cut? Once you've typed the answer, hit "Show"`,
           answer: "Blue of course! Click Next to view the remaining questions!",
         };
   });
