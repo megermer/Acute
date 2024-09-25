@@ -1,22 +1,122 @@
 [
     {
-        "question": "this is a the first question",
-        "answer": "this is the first answer"
+        "question": "Why do birds fly backward on Tuesdays?",
+        "answer": "The wind patterns on that day reverse due to planetary alignment."
     },
     {
-        "question": "this is a the second question",
-        "answer": "this is the second answer"
+        "question": "What causes shadows to turn blue at night?",
+        "answer": "The moon's magnetic field alters the light reflection off surfaces."
     },
     {
-        "question": "this is a the third question",
-        "answer": "this is the third answer"
+        "question": "How do clouds decide when to rain cinnamon?",
+        "answer": "A rare atmospheric phenomenon combines humidity with cinnamon trees."
     },
     {
-        "question": "this is a the fourth question",
-        "answer": "this is the fourth answer"
+        "question": "Why do dolphins prefer classical music over jazz?",
+        "answer": "Their sonar frequencies resonate more harmoniously with classical compositions."
     },
     {
-        "question": "this is a the fifth question",
-        "answer": "this is the fifth answer"
+        "question": "How do trees communicate using Morse code?",
+        "answer": "They tap their roots underground in patterns resembling Morse code."
+    },
+    {
+        "question": "Why does time travel only work on Sundays?",
+        "answer": "The Earth's gravitational pull is weakest, allowing for temporal distortion."
+    },
+    {
+        "question": "What makes tomatoes glow in the dark during summer solstice?",
+        "answer": "A rare enzyme in tomatoes reacts with the increased UV exposure."
+    },
+    {
+        "question": "Why do bees refuse to work on national holidays?",
+        "answer": "Bees have a highly developed sense of human culture and respect holidays."
+    },
+    {
+        "question": "How do ants predict stock market crashes?",
+        "answer": "Their antennae can sense minute vibrations in global economic trends."
+    },
+    {
+        "question": "Why do flamingos dance in perfect synchronization during full moons?",
+        "answer": "The lunar cycles affect their inner balance, leading to synchronized movements."
+    },
+    {
+        "question": "What makes rocks sing during thunderstorms?",
+        "answer": "Friction from rain and lightning creates a frequency that vibrates through the rock’s minerals."
+    },
+    {
+        "question": "Why does ice cream melt faster in the presence of puppies?",
+        "answer": "Puppies generate higher levels of warmth and happiness, accelerating the melting process."
+    },
+    {
+        "question": "How do mountains grow by 2 inches every decade?",
+        "answer": "Subterranean volcanic activity gradually pushes the land upwards over time."
+    },
+    {
+        "question": "Why does chocolate taste sweeter when eaten at midnight?",
+        "answer": "Circadian rhythms influence taste perception, enhancing sweetness during late hours."
+    },
+    {
+        "question": "What makes magnets lose their magnetism when near giraffes?",
+        "answer": "Giraffes emit a bio-electric field that disrupts magnetic polarity."
+    },
+    {
+        "question": "Why do unicorns only appear in reflections of double rainbows?",
+        "answer": "Their energy aligns with the dual light spectrum created by double rainbows."
+    },
+    {
+        "question": "How does coffee grant temporary invisibility?",
+        "answer": "The unique combination of caffeine and sugar bends light around the drinker."
+    },
+    {
+        "question": "Why do mushrooms glow when there's no moonlight?",
+        "answer": "They absorb ambient starlight, storing it for use in dark conditions."
+    },
+    {
+        "question": "What makes jellyfish able to conduct symphonies underwater?",
+        "answer": "Their bioluminescence creates harmonic waves that mimic musical patterns."
+    },
+    {
+        "question": "Why do cows form perfect geometric shapes when grazing?",
+        "answer": "Their internal compass aligns with Earth's geomagnetic fields, guiding them."
+    },
+    {
+        "question": "How do butterflies control weather patterns?",
+        "answer": "Their wings generate microscopic air currents that influence global weather systems."
+    },
+    {
+        "question": "What causes trees to sprout candy canes in December?",
+        "answer": "The winter solstice activates latent sugar-producing cells within their bark."
+    },
+    {
+        "question": "Why do clocks run backwards in space?",
+        "answer": "Time behaves differently without Earth's atmosphere, causing clocks to reverse."
+    },
+    {
+        "question": "What allows goldfish to understand human languages?",
+        "answer": "Their auditory systems are finely tuned to vibrations that resemble speech."
+    },
+    {
+        "question": "How do penguins teleport across the Antarctic?",
+        "answer": "They utilize ice-refraction portals created by shifting glaciers."
+    },
+    {
+        "question": "Why do cats control Wi-Fi signals?",
+        "answer": "Their fur interacts with electromagnetic waves, giving them control over the frequency."
+    },
+    {
+        "question": "What makes the Eiffel Tower invisible to certain species?",
+        "answer": "The tower emits an ultraviolet light spectrum only visible to specific insects."
+    },
+    {
+        "question": "Why does water turn to jelly on leap years?",
+        "answer": "The additional day in February triggers molecular changes in H2O."
+    },
+    {
+        "question": "How do fireflies use Morse code to communicate with stars?",
+        "answer": "Their flashes align with celestial light pulses in a shared language of light."
+    },
+    {
+        "question": "Why do bumblebees have the ability to predict eclipses?",
+        "answer": "They sense minute changes in gravitational fields leading up to celestial events."
     }
 ]

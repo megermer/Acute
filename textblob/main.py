@@ -7,8 +7,8 @@ model = SentenceTransformer('bert-base-nli-mean-tokens')
 # sentence1 = "Python is used mostly for scripting."
 # sentence2 = "Java is used mostly for scripting."
 
-sentence1 = "The language mostly used for scripting is Python"
-sentence2 = "Python is mostly used for scripting"
+sentence1 = "There is water there"
+sentence2 = "Because there's water on mars"
 
 
 # Generate embeddings for each sentence
