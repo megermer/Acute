@@ -94,3 +94,17 @@ div {
     font-size: 1.25rem;
     font-weight: 600;
 }
+
+@media (max-width: 1500px) {
+  .card {
+    width: 40%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 1150px) {
+  .card {
+    width: 50%;
+    height: 30%;
+  }
+}
