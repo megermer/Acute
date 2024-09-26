@@ -1,3 +1,4 @@
+from bert import bert_model
 from flask import Flask, jsonify, request
 from flasgger import Swagger
 
@@ -27,34 +28,37 @@ def word_count():
     Endpoint to count words in two paragraphs.
     ---
     parameters:
-      - name: paragraph1
+      - name: card_back
         in: formData
         type: string
         required: true
-        description: The first paragraph.
-      - name: paragraph2
+        description: Answer on back of card.
+      - name: user_input
         in: formData
         type: string
         required: true
-        description: The second paragraph.
+        description: The user's input.
     responses:
       200:
-        description: Word count
+        description: Similarity score
         schema:
           type: object
           properties:
             word_count:
-              type: integer
-              example: 100
+              type: float
+              example: 0.992
     """
-    paragraph1 = request.form.get('paragraph1')
-    paragraph2 = request.form.get('paragraph2')
+    card_back = request.form.get('card_back')
+    user_input = request.form.get('user_input')
 
-    if not paragraph1 or not paragraph2:
-        return jsonify({"error": "Both paragraphs are required"}), 400
+    if not card_back or not user_input:
+        return jsonify({"error": "Both inputs are required"}), 400
 
-    total_words = len(paragraph1.split()) + len(paragraph2.split())
-    return jsonify({"word_count": total_words})
+    # total_words = len(paragraph1.split()) + len(paragraph2.split())
+
+    similarity_score = bert_model(card_back, user_input)
+    
+    return jsonify({"similarity_score": similarity_score})
 
 
 if __name__ == '__main__':
