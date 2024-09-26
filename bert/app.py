@@ -4,10 +4,10 @@ from flasgger import Swagger
 app = Flask(__name__)
 swagger = Swagger(app)
 
-@app.route('/api/hello', methods=['GET'])
-def hello():
+@app.route('/api/healthcheck', methods=['GET'])
+def healthcheck():
     """
-    A simple hello world endpoint.
+    API healthcheck endpoint
     ---
     responses:
       200:
@@ -17,9 +17,9 @@ def hello():
           properties:
             message:
               type: string
-              example: Hello, World!
+              example: API is up and running successfully.
     """
-    return jsonify(message="Hello, World!")
+    return jsonify(message="API is up and running successfully.")
 
 @app.route('/api/wordcount', methods=['POST'])
 def word_count():
