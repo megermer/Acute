@@ -22,10 +22,10 @@ def healthcheck():
     """
     return jsonify(message="API is up and running successfully.")
 
-@app.route('/api/wordcount', methods=['POST'])
-def word_count():
+@app.route('/api/similarity', methods=['POST'])
+def similarity():
     """
-    Endpoint to count words in two paragraphs.
+    Endpoint to find the similarity score between the card back and the user input.
     ---
     parameters:
       - name: card_back
@@ -48,8 +48,10 @@ def word_count():
               type: float
               example: 0.992
     """
-    card_back = request.form.get('card_back')
-    user_input = request.form.get('user_input')
+    data = request.get_json()
+
+    card_back = data.get('card_back')
+    user_input = data.get('user_input')
 
     if not card_back or not user_input:
         return jsonify({"error": "Both inputs are required"}), 400
