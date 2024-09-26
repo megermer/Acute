@@ -1,8 +1,10 @@
 from bert import bert_model
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from flasgger import Swagger
 
 app = Flask(__name__)
+CORS(app)
 swagger = Swagger(app)
 
 @app.route('/api/healthcheck', methods=['GET'])
