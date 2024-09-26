@@ -54,8 +54,6 @@ def word_count():
     if not card_back or not user_input:
         return jsonify({"error": "Both inputs are required"}), 400
 
-    # total_words = len(paragraph1.split()) + len(paragraph2.split())
-
     similarity_score = bert_model(card_back, user_input)
     
     return jsonify({"similarity_score": similarity_score})
