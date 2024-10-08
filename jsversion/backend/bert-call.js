@@ -1,4 +1,4 @@
-async function getSimilarity(card_back, user_input) {
+export async function getSimilarity(card_back, user_input) {
   const data = {
     card_back: card_back,
     user_input: user_input
