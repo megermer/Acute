@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 // import { getSimilarity } from "/backend/bert-call";
 import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
+import { SM2Tutorial } from "../src/components/sm2-tutorial";
+// import { SM2AI } from "../src/components/sm2-bert-page";
+// import { SM2 } from "../src/components/sm2-page";
 
 function App() {
   const algorithmTable = {
@@ -26,16 +29,27 @@ function App() {
     setSelectedAlgorithm(data);
   };
 
+  const handleDataFomSM2AI = () => {
+
+  }
+
+  const handleDataFomSM2 = () => {
+
+  }
+ 
   return (
     <div id="root-page">
       {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-        <p>Will Display sm2-bert-page Component</p>
+        // <SM2AI onData={handleDataFomSM2AI} />
+        <p>Should show SM2AI Component</p>
       ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-        <p>Will Display sm2-page Component</p>
+        // <SM2 onData={handleDataFomSM2} />
+        <p>Should show SM2 Component</p>
       ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
         <BertTutorial onData={handleDataDisplayPage} />
       ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
-        <p>Will Display sm2-tutorial Component</p>
+        <SM2Tutorial onData={handleDataDisplayPage} />
+        // <p>Testing SM2Tutorial</p>
       ) : (
         <SelectPage onData={handleDataDisplayPage} />
       )}
