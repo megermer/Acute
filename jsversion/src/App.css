@@ -5,6 +5,7 @@ div {
   padding: 0px;
 }
 
+/* >>> select-page.jsx */
 #root-page {
   padding: 0px;
   margin: 0px;
@@ -40,8 +41,10 @@ div {
     justify-self: flex-start;
     align-items: flex-start;
 }
+/* <<< select-page.jsx */
 
-#cards-cont {
+/* >>> card.jsx */
+#cards-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +52,6 @@ div {
   width: 100%;
   height: 100%;
   gap: 5%;
-
 }
 
 .card {
@@ -78,6 +80,12 @@ div {
 .card-content {
   line-height: 1.5rem;
 }
+/* <<< card.jsx */
+
+/* >>> bert-tutorial.jsx */
+
+
+/* <<< bert-tutorial.jsx */
 
 #buttons {
   display: flex;
