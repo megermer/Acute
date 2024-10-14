@@ -12,6 +12,8 @@ node_modules/
 dist
 dist-ssr
 *.local
+/bert/abishur/
+/bert/_pycache_/
 
 # Editor directories and files
 .vscode/*
