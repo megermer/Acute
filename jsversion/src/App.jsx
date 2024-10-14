@@ -6,8 +6,9 @@ import { useState, useEffect } from "react";
 import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
-// import { SM2AI } from "../src/components/sm2-bert-page";
+import { SM2AI } from "../src/components/sm2-bert-page";
 // import { SM2 } from "../src/components/sm2-page";
+
 
 function App() {
   const algorithmTable = {

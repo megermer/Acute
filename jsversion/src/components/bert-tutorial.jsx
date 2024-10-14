@@ -34,7 +34,7 @@ export const BertTutorial = ({ onData }) => {
   };
 
   return (
-    <div id="template-container">
+    <div className="template-container">
       <BertCard
         tutorialCard={tutorialCard}
         displayAnswer={displayAnswer}
