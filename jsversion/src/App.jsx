@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Radio from "@mui/material/Radio";
+import { getSimilarity } from "../backend/bert-call"
 
 function App() {
   // Selecting the algorithm with the radio btns
@@ -99,9 +100,11 @@ function App() {
   };
 
   // Will display answer only when input box is not empty
-  const displayAnswer = () => {
+  const displayAnswer = async () => {
     if (inputValue) {
       setDisplayingAnswer((prevState) => !prevState);
+      const result = await getSimilarity("I like pizza", "I hate pizza");
+      console.log(result);
     }
 
     console.log(inputValue);

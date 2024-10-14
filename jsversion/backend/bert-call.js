@@ -1,4 +1,4 @@
-async function getSimilarity(card_back, user_input) {
+export async function getSimilarity(card_back, user_input) {
   const data = {
     card_back: card_back,
     user_input: user_input
@@ -17,11 +17,3 @@ async function getSimilarity(card_back, user_input) {
 
 let card_back = "I like pizza"
 let user_input = "I like pizza"
-
-getSimilarity(card_back, user_input)
-  .then(data => {
-    console.log(data)
-  })
-  .catch(error => {
-    console.error('Error: ', error)
-  })
