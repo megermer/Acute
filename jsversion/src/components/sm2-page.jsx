@@ -1,25 +1,34 @@
-const SM2Page = () => {
+import * as React from "react";
+import { useState } from "react";
+import Button from "@mui/material/Button";
+import Stack from "@mui/material/Stack";
+import { Sm2Card } from "./card";
+
+export const SM2 = ({ onData }) => {
+  const [displayAnswer, setDisplayAnswer] = useState(false);
+
+  const tutorialCard = {
+    question: "SM2 This is a SM2 question card",
+    answer: "SM2 This is a SM2 question card",
+  };
+
+  const sendDataToParent = () => {
+    // Tells App.jsx that current card has been reviewed
+    let cardOver = true;
+    onData(cardOver);
+    alert("Check comment in sendDataToParent() in sm2-page.jsx")
+  };
+
   return (
-    <section id="cards-cont">
-      <div className="card" id="question-card">
-        <p className="card-title">Question</p>
-        <p className="card-content">{card.question}</p>
-      </div>
-      <div
-        className="card"
-        id="answer-card"
-        style={{ visibility: displayAnswer ? "visible" : "hidden" }}
-      >
-        <p className="card-title">Answer</p>
-        <p className="card-content">{card.answer}</p>
-      </div>
+    <section className="template-container">
+      <Sm2Card tutorialCard={tutorialCard} displayAnswer={displayAnswer} />
       <Stack direction="row" spacing={2} id="buttons-sm2">
-        {sm2Btns === true ? (
+        {displayAnswer === true ? (
           <Stack direction="row" spacing={2} id="sm2-btns">
             <Button
               variant="contained"
               color="success"
-              onClick={displayCards}
+              onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
               Impossible
@@ -27,7 +36,7 @@ const SM2Page = () => {
             <Button
               variant="contained"
               color="success"
-              onClick={displayCards}
+              onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
               Hard
@@ -35,7 +44,7 @@ const SM2Page = () => {
             <Button
               variant="contained"
               color="success"
-              onClick={displayCards}
+              onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
               Normal
@@ -43,7 +52,7 @@ const SM2Page = () => {
             <Button
               variant="contained"
               color="success"
-              onClick={displayCards}
+              onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
               Easy
@@ -53,7 +62,7 @@ const SM2Page = () => {
           <Button
             variant="contained"
             color="success"
-            onClick={displayAnswerSM2}
+            onClick={() => setDisplayAnswer((prev) => !prev)}
             sx={{ bgcolor: "#1976d2" }}
           >
             {displayAnswer ? "Hide" : "Show"}
