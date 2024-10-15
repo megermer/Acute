@@ -7,8 +7,7 @@ import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
-// import { SM2 } from "../src/components/sm2-page";
-
+import { SM2 } from "../src/components/sm2-page";
 
 function App() {
   const algorithmTable = {
@@ -25,32 +24,36 @@ function App() {
     return savedData ? JSON.parse(savedData) : 0;
   });
 
+  useEffect(() => {
+    localStorage.setItem("selectedAlgorithm", selectedAlgorithm);
+  }, [selectedAlgorithm]);
+
   // Page display data from components
   const handleDataDisplayPage = (data) => {
+    console.log("page selected: ", data);
     setSelectedAlgorithm(data);
   };
 
   const handleDataFomSM2AI = () => {
-
-  }
+    // Receives data confirming that card has been reviewed.
+    // Provide next card
+  };
 
   const handleDataFomSM2 = () => {
+    // Receives data confirming that card has been reviewed.
+    // Provide next card
+  };
 
-  }
- 
   return (
     <div id="root-page">
       {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-        // <SM2AI onData={handleDataFomSM2AI} />
-        <p>Should show SM2AI Component</p>
+        <SM2AI onData={handleDataFomSM2AI} />
       ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-        // <SM2 onData={handleDataFomSM2} />
-        <p>Should show SM2 Component</p>
+        <SM2 onData={handleDataFomSM2} />
       ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
         <BertTutorial onData={handleDataDisplayPage} />
       ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
         <SM2Tutorial onData={handleDataDisplayPage} />
-        // <p>Testing SM2Tutorial</p>
       ) : (
         <SelectPage onData={handleDataDisplayPage} />
       )}
