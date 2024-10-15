@@ -7,7 +7,14 @@ import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
+<<<<<<< HEAD
+import data from './data.json';
+import { getSimilarity } from "../backend/bert-call";
+import supermemo  from "../backend/SM2";
+import { convertToSM2Score } from "../backend/converter";
+=======
 import { SM2 } from "../src/components/sm2-page";
+>>>>>>> develop
 
 function App() {
   const algorithmTable = {
@@ -24,6 +31,30 @@ function App() {
     return savedData ? JSON.parse(savedData) : 0;
   });
 
+  // Set cards 
+  const [cards, setCards] = useState([{}]);
+
+  const handleCardChange = (newCard) => {
+      let rearrangedCards = [...cards]
+      let index;
+      if (newCard.efactor < 2) { // Hard
+        index = 5;
+      } else if (newCard.efactor < 2.25) { // Medium
+        index = Math.floor(Math.random() * (19 - 10)) + 10;
+      } else if (newCard.efactor < 3) { // Easy
+        let index = Math.floor(Math.random() * (29 - 20)) + 20;
+      }
+
+      rearrangedCards.splice(index, 0, newCard);
+      let removedCard = rearrangedCards.shift();
+
+      if (rearrangedCards.every((card) => card.efactor > 2.3)) {
+        console.log("Study session complete")
+      }
+
+      setCards(rearrangedCards);
+  }
+  
   useEffect(() => {
     localStorage.setItem("selectedAlgorithm", selectedAlgorithm);
   }, [selectedAlgorithm]);
@@ -34,20 +65,39 @@ function App() {
     setSelectedAlgorithm(data);
   };
 
-  const handleDataFomSM2AI = () => {
-    // Receives data confirming that card has been reviewed.
-    // Provide next card
-  };
+  const handleDataFomSM2AI = async(currentCard, userAnswer) => {
+    const bertScore =await getSimilarity(currentCard.answer, userAnser);
+    const SM2Grade = convertToSM2Score(bertScore);
+    const newCard = supermemo(currentCard, SM2Grade);
+    handleCardChange(newCard);
+  }
 
-  const handleDataFomSM2 = () => {
-    // Receives data confirming that card has been reviewed.
-    // Provide next card
-  };
+  const handleDataFomSM2 = (currentCard, SM2Grade) => {
+    const newCard = supermemo(currentCard, SM2Grade);
+    handleCardChange(newCard);
+  }
 
   const deleteLocalStorage = () => {
     setSelectedAlgorithm(0);
   };
 
+  const convertDataToCardObject = async() => {
+    try {
+      const updatedCards = data.map(card => ({
+        ...card, 
+        interval: 0,
+        repetition: 0,
+        efactor: 2.5, 
+        introStage: true
+      }))
+      setCards(() => {
+        return updatedCards;
+      })
+    } catch (error) {
+      console.error("Error fetching data:", error)
+    }
+  }
+ 
   return (
     <div id="root-page">
       <navbar id="navbar">
