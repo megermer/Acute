@@ -1,23 +1,16 @@
 import "./App.css";
 import * as React from "react";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-import data from "../src/data.json";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
-import TextField from "@mui/material/TextField";
-import Radio from "@mui/material/Radio";
-import { getSimilarity } from "../backend/bert-call"
-=======
 // import data from "../src/data.json";
 // import { getSimilarity } from "/backend/bert-call";
 import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
-// import { SM2 } from "../src/components/sm2-page";
-
->>>>>>> develop
+import data from './data.json';
+import { getSimilarity } from "../backend/bert-call";
+import supermemo  from "../backend/SM2";
+import { convertToSM2Score } from "../backend/converter";
 
 function App() {
   const algorithmTable = {
@@ -28,91 +21,62 @@ function App() {
     4: "SM2AITUTORIAL",
   };
 
-<<<<<<< HEAD
-  // handleChange for radio btn
-  const handleChangeRadio = (event) => {
-    console.log(event.target.value);
-
-    // Converting to integer then assigning
-    setSelectedValue(parseInt(event.target.value, 10));
-  };
-
-  /* In charge of showing next card
-    Will not show next card if input box is empty
-  */
-  const displayCards = () => {
-    if (!inputValue && pickAlgorithm === 2) {
-      return;
-    }
-
-    console.log(`inputValue: ${inputValue}`);
-    if (cardIndex < 5) {
-      setDisplayedCard(data[cardIndex]);
-      setCardIndex((prevState) => prevState + 1);
-      setInputValue("");
-
-      setDisplayingAnswer(false);
-
-      if (pickAlgorithm === 1) {
-        setDisplayingAnswer((prevState) => !prevState);
-        displayAnswerSM2()
-      }
-    } else {
-      alert("You've completed your study cards!");
-    }
-  };
-
-  // Will display answer only when input box is not empty
-  const displayAnswer = async () => {
-    if (inputValue) {
-      setDisplayingAnswer((prevState) => !prevState);
-      const result = await getSimilarity("I like pizza", "I hate pizza");
-      console.log(result);
-    }
-
-    console.log(inputValue);
-  };
-
-  const displayAnswerSM2 = () => {
-    setDisplayingAnswer((prevState) => !prevState);
-
-    setDisplayBtns((prevState) => !prevState);
-
-    console.log(inputValue);
-  };
-
-  // Once btn is pushed, the right template will be shown
-  const displayTemplate = () => {
-    setPickAlgorithm(selectedValue);
-    console.log("Template picked:", selectedValue);
-  };
-
-  // Radio btn controls
-  const controlProps = (item) => ({
-    checked: selectedValue === item,
-    onChange: handleChangeRadio,
-    value: item,
-    name: "color-radio-button-demo",
-    inputProps: { "aria-label": item },
-=======
   // Select Algorithm page to be displayed
   const [selectedAlgorithm, setSelectedAlgorithm] = useState(() => {
     const savedData = localStorage.getItem("selectedAlgorithm");
     return savedData ? JSON.parse(savedData) : 0;
->>>>>>> develop
   });
+
+  // Set cards 
+  const [cards, setCards] = useState([{}]);
+
+  const handleCardChange = (newCard) => {
+      let rearrangedCards = [...cards]
+      if (rearrangedCards.every((card) => card.progressStage === 4)) {
+        console.log("Study session complete")
+      }
+      if (efactor < 2) {
+        rearrangedCards.splice(5, 0 , newCard);
+        let removedCard = rearrangedCards.shift();
+      } 
+
+
+      setCards(rearrangedCards);
+    }
+  }
 
   // Page display data from components
   const handleDataDisplayPage = (data) => {
     setSelectedAlgorithm(data);
   };
 
-  const handleDataFomSM2AI = () => {
-
+  const handleDataFomSM2AI = async(currentCard, userAnswer) => {
+    const bertScore =await getSimilarity(currentCard.answer, userAnser);
+    const SM2Grade = convertToSM2Score(bertScore);
+    const newCard = supermemo(currentCard, SM2Grade);
+    handleCardChange(newCard);
   }
 
-  const handleDataFomSM2 = () => {
+  const handleDataFomSM2 = (currentCard, SM2Grade) => {
+    const newCard = supermemo(currentCard, SM2Grade);
+    handleCardChange(newCard);
+  }
 
+  const convertDataToCardObject = async() => {
+    try {
+      const updatedCards = data.map(card => ({
+        ...card, 
+        interval: 0,
+        repetition: 0,
+        efactor: 2.5, 
+        introStage: true
+      }))
+      setCards(() => {
+        return updatedCards;
+      })
+    } catch (error) {
+      console.error("Error fetching data:", error)
+    }
   }
  
   return (
