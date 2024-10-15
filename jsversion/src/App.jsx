@@ -32,18 +32,25 @@ function App() {
 
   const handleCardChange = (newCard) => {
       let rearrangedCards = [...cards]
-      if (rearrangedCards.every((card) => card.progressStage === 4)) {
+      let index;
+      if (newCard.efactor < 2) { // Hard
+        index = 5;
+      } else if (newCard.efactor < 2.25) { // Medium
+        index = Math.floor(Math.random() * (19 - 10)) + 10;
+      } else if (newCard.efactor < 3) { // Easy
+        let index = Math.floor(Math.random() * (29 - 20)) + 20;
+      }
+
+      rearrangedCards.splice(index, 0, newCard);
+      let removedCard = rearrangedCards.shift();
+
+      if (rearrangedCards.every((card) => card.efactor > 2.3)) {
         console.log("Study session complete")
       }
-      if (efactor < 2) {
-        rearrangedCards.splice(5, 0 , newCard);
-        let removedCard = rearrangedCards.shift();
-      } 
-
 
       setCards(rearrangedCards);
-    }
   }
+  
 
   // Page display data from components
   const handleDataDisplayPage = (data) => {
