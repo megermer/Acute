@@ -2,16 +2,18 @@ import * as React from "react";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
-export const BertCard = ({ tutorialCard, displayAnswer, onData }) => {
+export const BertCard = ({ tutorialCard, displayAnswer, onData, nextDisabled }) => {
   let displayedCard = tutorialCard;
   let displayingAnswer = displayAnswer;
+  let disableText = nextDisabled
 
   let [userInput, setUserInput] = useState("");
 
   const sendDataToParent = (event) => {
     setUserInput(event.target.value);
-    onData(userInput);
+    onData(event.target.value);
   };
+
 
   return (
     <div id="card-container">
@@ -23,9 +25,10 @@ export const BertCard = ({ tutorialCard, displayAnswer, onData }) => {
           label="Answer"
           variant="outlined"
           multiline
-          maxRows={1}
+          maxRows={2}
           value={userInput}
           onChange={sendDataToParent}
+          disabled={disableText}
           sx={{ width: "75%", height: "25%", m: "0px", p: "0px" }}
         />
       </div>

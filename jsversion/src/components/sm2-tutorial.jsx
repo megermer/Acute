@@ -18,7 +18,7 @@ export const SM2Tutorial = ({ onData }) => {
   };
 
   return (
-    <section id="template-container">
+    <section className="template-container">
       <Sm2Card tutorialCard={tutorialCard} displayAnswer={displayAnswer} />
       <Stack direction="row" spacing={2} id="buttons-sm2">
         {displayAnswer === true ? (

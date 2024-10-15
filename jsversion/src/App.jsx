@@ -7,10 +7,14 @@ import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
+<<<<<<< HEAD
 import data from './data.json';
 import { getSimilarity } from "../backend/bert-call";
 import supermemo  from "../backend/SM2";
 import { convertToSM2Score } from "../backend/converter";
+=======
+import { SM2 } from "../src/components/sm2-page";
+>>>>>>> develop
 
 function App() {
   const algorithmTable = {
@@ -51,9 +55,13 @@ function App() {
       setCards(rearrangedCards);
   }
   
+  useEffect(() => {
+    localStorage.setItem("selectedAlgorithm", selectedAlgorithm);
+  }, [selectedAlgorithm]);
 
   // Page display data from components
   const handleDataDisplayPage = (data) => {
+    console.log("page selected: ", data);
     setSelectedAlgorithm(data);
   };
 
@@ -68,6 +76,10 @@ function App() {
     const newCard = supermemo(currentCard, SM2Grade);
     handleCardChange(newCard);
   }
+
+  const deleteLocalStorage = () => {
+    setSelectedAlgorithm(0);
+  };
 
   const convertDataToCardObject = async() => {
     try {
@@ -88,20 +100,23 @@ function App() {
  
   return (
     <div id="root-page">
-      {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-        // <SM2AI onData={handleDataFomSM2AI} />
-        <p>Should show SM2AI Component</p>
-      ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-        // <SM2 onData={handleDataFomSM2} />
-        <p>Should show SM2 Component</p>
-      ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
-        <BertTutorial onData={handleDataDisplayPage} />
-      ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
-        <SM2Tutorial onData={handleDataDisplayPage} />
-        // <p>Testing SM2Tutorial</p>
-      ) : (
-        <SelectPage onData={handleDataDisplayPage} />
-      )}
+      <navbar id="navbar">
+        <p>Acute</p>
+      </navbar>
+      <div id="content">
+        <button onClick={deleteLocalStorage}>Test</button>
+        {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
+          <SM2AI onData={handleDataFomSM2AI} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
+          <SM2 onData={handleDataFomSM2} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
+          <BertTutorial onData={handleDataDisplayPage} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
+          <SM2Tutorial onData={handleDataDisplayPage} />
+        ) : (
+          <SelectPage onData={handleDataDisplayPage} />
+        )}
+      </div>
     </div>
   );
 }
