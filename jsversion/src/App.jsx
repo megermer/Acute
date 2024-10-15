@@ -44,19 +44,29 @@ function App() {
     // Provide next card
   };
 
+  const deleteLocalStorage = () => {
+    setSelectedAlgorithm(0);
+  };
+
   return (
     <div id="root-page">
-      {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-        <SM2AI onData={handleDataFomSM2AI} />
-      ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-        <SM2 onData={handleDataFomSM2} />
-      ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
-        <BertTutorial onData={handleDataDisplayPage} />
-      ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
-        <SM2Tutorial onData={handleDataDisplayPage} />
-      ) : (
-        <SelectPage onData={handleDataDisplayPage} />
-      )}
+      <navbar id="navbar">
+        <p>Acute</p>
+      </navbar>
+      <div id="content">
+        <button onClick={deleteLocalStorage}>Test</button>
+        {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
+          <SM2AI onData={handleDataFomSM2AI} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
+          <SM2 onData={handleDataFomSM2} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
+          <BertTutorial onData={handleDataDisplayPage} />
+        ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
+          <SM2Tutorial onData={handleDataDisplayPage} />
+        ) : (
+          <SelectPage onData={handleDataDisplayPage} />
+        )}
+      </div>
     </div>
   );
 }

@@ -5,6 +5,30 @@ div {
   padding: 0px;
 }
 
+navbar {
+  height: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  height: 95%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+navbar > p {
+  margin: 0.5rem 0 0 1rem;
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+
+
 /* >>> select-page.jsx */
 #root-page {
   padding: 0px;
@@ -12,13 +36,9 @@ div {
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #e3e3e3;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 #pick-algorithm {
@@ -35,11 +55,11 @@ div {
 }
 
 #pick-algorithm > div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    justify-self: flex-start;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-self: flex-start;
+  align-items: flex-start;
 }
 /* <<< select-page.jsx */
 
@@ -72,7 +92,7 @@ div {
 }
 
 .card-content {
-  margin-bottom: 0.75rem
+  margin-bottom: 0.75rem;
 }
 /* <<< card.jsx */
 
@@ -95,26 +115,42 @@ div {
 }
 
 #buttons-sm2 {
-    display: flex;
-    width: 40%;
-    justify-content: center;
+  display: flex;
+  width: 40%;
+  justify-content: center;
 }
 
 #ai-title {
-    font-size: 1.25rem;
-    font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
+/* modify height */
+@media (max-height: 850px) {
+  #pick-algorithm {
+    height: 35%;
+    width: 35%;
+  }
+}
+
+@media (max-height: 550px) {
+  #pick-algorithm {
+    height: 50%;
+    width: 50%;
+  }
+}
+
+/* modify width */
 @media (max-width: 1500px) {
-  /* .card {
-    width: 40%;
-    height: 30%;
-  } */
+  .card {
+    width: 50%;
+    height: 40%;
+  }
 }
 
 @media (max-width: 1150px) {
-  /* .card {
-    width: 50%;
-    height: 30%;
-  } */
+  .card {
+    width: 60%;
+    height: 50%;
+  }
 }
