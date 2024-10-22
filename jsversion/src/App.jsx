@@ -7,14 +7,11 @@ import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
-<<<<<<< HEAD
 import data from './data.json';
 import { getSimilarity } from "../backend/bert-call";
 import supermemo  from "../backend/SM2";
 import { convertToSM2Score } from "../backend/converter";
-=======
 import { SM2 } from "../src/components/sm2-page";
->>>>>>> develop
 
 function App() {
   const algorithmTable = {
@@ -32,7 +29,8 @@ function App() {
   });
 
   // Set cards 
-  const [cards, setCards] = useState([{}]);
+  const [cards, setCards] = useState([]);
+  const [cardToDisplay, setCardToDisplay] = useState(cards[0]);
 
   const handleCardChange = (newCard) => {
       let rearrangedCards = [...cards]
@@ -53,6 +51,7 @@ function App() {
       }
 
       setCards(rearrangedCards);
+      setCardToDisplay(rearrangedCards[0]);
   }
   
   useEffect(() => {
@@ -66,7 +65,7 @@ function App() {
   };
 
   const handleDataFomSM2AI = async(currentCard, userAnswer) => {
-    const bertScore =await getSimilarity(currentCard.answer, userAnser);
+    const bertScore =await getSimilarity(currentCard.answer, userAnswer);
     const SM2Grade = convertToSM2Score(bertScore);
     const newCard = supermemo(currentCard, SM2Grade);
     handleCardChange(newCard);
@@ -81,18 +80,23 @@ function App() {
     setSelectedAlgorithm(0);
   };
 
-  const convertDataToCardObject = async() => {
+  
+  useEffect(() => {
+    const initialCards = convertDataToCardObject(data);
+    setCards(initialCards);
+    console.log('cards: ', cards)
+  }, []);
+
+
+  const convertDataToCardObject = (data) => {
     try {
       const updatedCards = data.map(card => ({
         ...card, 
         interval: 0,
         repetition: 0,
-        efactor: 2.5, 
-        introStage: true
+        efactor: 2.5
       }))
-      setCards(() => {
-        return updatedCards;
-      })
+      return updatedCards
     } catch (error) {
       console.error("Error fetching data:", error)
     }

@@ -40,7 +40,7 @@ export default function supermemo(item, grade) {
       nextRepetition = 0;
     }
   
-    nextEfactor = item.efactor + (0.1 - (5 - grade(1.66)) * (0.08 + (5 - grade(1.66)) * 0.02));  
+    nextEfactor = item.efactor + (0.1 - (5 - (grade)*(1.66)) * (0.08 + (5 - (grade)*(1.66)) * 0.02));  
 
     if (nextEfactor < 1.3) nextEfactor = 1.3;
   
