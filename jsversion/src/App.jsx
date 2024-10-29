@@ -1,8 +1,6 @@
 import "./App.css";
 import * as React from "react";
 import { useState, useEffect } from "react";
-// import data from "../src/data.json";
-// import { getSimilarity } from "/backend/bert-call";
 import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
@@ -32,25 +30,28 @@ function App() {
   const [cards, setCards] = useState();
 
   const handleCardChange = (newCard) => {
+      console.log("handleCardChange() entered")
       let rearrangedCards = [...cards]
+      console.log("rearrangedCards: ", rearrangedCards)
       let index;
       if (newCard.efactor < 2) { // Hard
+        console.log("if entered")
         index = 5;
       } else if (newCard.efactor < 2.25) { // Medium
+        console.log("2nd elseif entered")
         index = Math.floor(Math.random() * (19 - 10)) + 10;
       } else if (newCard.efactor < 3) { // Easy
-        let index = Math.floor(Math.random() * (29 - 20)) + 20;
+        console.log("3rd elseif entered")
+        index = Math.floor(Math.random() * (29 - 20)) + 20;
       }
 
       rearrangedCards.splice(index, 0, newCard);
-      let removedCard = rearrangedCards.shift();
-
+      rearrangedCards.shift();
       if (rearrangedCards.every((card) => card.efactor > 2.3)) {
         console.log("Study session complete")
       }
-
+      console.log("rearranged cards after shifts: ", rearrangedCards)
       setCards(rearrangedCards);
-      setCardToDisplay(rearrangedCards[0]);
   }
   
   useEffect(() => {
@@ -63,12 +64,19 @@ function App() {
     setSelectedAlgorithm(data);
   };
 
-  const handleDataFomSM2AI = async(currentCard, userAnswer) => {
-    const bertScore = await getSimilarity(currentCard.answer, userAnswer);
-    console.log('bert score: ', bertScore)
-    const SM2Grade = convertToSM2Score(bertScore);
-    const newCard = supermemo(currentCard, SM2Grade);
-    handleCardChange(newCard);
+  const handleDataFomSM2AI = async(userAnswer, cardOver) => {
+    if (cardOver){
+      let bertScore = await getSimilarity(cards[0].answer, userAnswer);
+      if (bertScore < 0) {
+        bertScore = 0.1;
+      }
+      console.log('bert score: ', bertScore)
+      const SM2Grade = await convertToSM2Score(bertScore.similarity_score);
+      console.log(SM2Grade)
+      const newCard = supermemo(cards[0], SM2Grade);
+      console.log('new card with adjusted efactors etc.: ', newCard)
+      handleCardChange(newCard);
+    }
   }
 
   const handleDataFomSM2 = (currentCard, SM2Grade) => {
