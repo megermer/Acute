@@ -7,10 +7,10 @@ import { Sm2Card } from "./card";
 export const SM2Tutorial = ({ onData }) => {
   const [displayAnswer, setDisplayAnswer] = useState(false);
 
-  const tutorialCard = {
+  const tutorialCard = [{
     question: "TUTORIAL This is a SM2 question card",
     answer: "TUTORIAL This is a SM2 question card",
-  };
+  }]
 
   const sendDataToParent = () => {
     let selectedPage = 1; // sm2 template
@@ -19,7 +19,7 @@ export const SM2Tutorial = ({ onData }) => {
 
   return (
     <section className="template-container">
-      <Sm2Card tutorialCard={tutorialCard} displayAnswer={displayAnswer} />
+      <Sm2Card cards={tutorialCard} displayAnswer={displayAnswer} />
       <Stack direction="row" spacing={2} id="buttons-sm2">
         {displayAnswer === true ? (
           <Stack direction="row" spacing={2} id="sm2-btns">

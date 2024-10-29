@@ -18,10 +18,10 @@ export const BertTutorial = ({ onData }) => {
     localStorage.setItem("userInput", userInput);
   }, [userInput]);
 
-  const tutorialCard = {
+  const tutorialCard = [{
     question: "TUTORIAL This is a bert question card",
     answer: "TUTORIAL This is a bert answer card",
-  };
+  }];
 
   const sendDataToParent = () => {
     if (!nextDisabled) {
@@ -48,7 +48,7 @@ export const BertTutorial = ({ onData }) => {
   return (
     <div className="template-container">
       <BertCard
-        tutorialCard={tutorialCard}
+        card={tutorialCard}
         displayAnswer={displayAnswer}
         onData={handleUserInput}
         nextDisabled={!nextDisabled}

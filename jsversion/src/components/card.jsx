@@ -2,8 +2,8 @@ import * as React from "react";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 
-export const BertCard = ({ tutorialCard, displayAnswer, onData, nextDisabled }) => {
-  let displayedCard = tutorialCard;
+export const BertCard = ({ displayAnswer, onData, nextDisabled, card }) => {
+  let displayedCard = card;
   let displayingAnswer = displayAnswer;
   let disableText = nextDisabled
 
@@ -13,6 +13,8 @@ export const BertCard = ({ tutorialCard, displayAnswer, onData, nextDisabled }) 
     setUserInput(event.target.value);
     onData(event.target.value);
   };
+
+  console.log('displayed card: ',displayedCard)
 
 
   return (

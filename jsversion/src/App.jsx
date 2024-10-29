@@ -29,8 +29,7 @@ function App() {
   });
 
   // Set cards 
-  const [cards, setCards] = useState([]);
-  const [cardToDisplay, setCardToDisplay] = useState(cards[0]);
+  const [cards, setCards] = useState();
 
   const handleCardChange = (newCard) => {
       let rearrangedCards = [...cards]
@@ -83,8 +82,8 @@ function App() {
   
   useEffect(() => {
     const initialCards = convertDataToCardObject(data);
+    console.log("initial cards: ", initialCards)
     setCards(initialCards);
-    console.log('cards: ', cards)
   }, []);
 
 
@@ -101,6 +100,10 @@ function App() {
       console.error("Error fetching data:", error)
     }
   }
+
+  const checkCards = () => {
+    console.log("cards after useEffect runs", cards)
+  }
  
   return (
     <div id="root-page">
@@ -109,10 +112,12 @@ function App() {
       </navbar>
       <div id="content">
         <button onClick={deleteLocalStorage}>Test</button>
+        <button onClick={checkCards}>check cards</button>
+
         {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-          <SM2AI onData={handleDataFomSM2AI} />
+          <SM2AI onData={handleDataFomSM2AI} cards={cards} />
         ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-          <SM2 onData={handleDataFomSM2} />
+          <SM2 onData={handleDataFomSM2} cards={cards}/>
         ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
           <BertTutorial onData={handleDataDisplayPage} />
         ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
