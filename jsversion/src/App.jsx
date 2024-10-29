@@ -7,14 +7,11 @@ import { SelectPage } from "../src/components/select-page";
 import { BertTutorial } from "../src/components/bert-tutorial";
 import { SM2Tutorial } from "../src/components/sm2-tutorial";
 import { SM2AI } from "../src/components/sm2-bert-page";
-<<<<<<< HEAD
 import data from './data.json';
 import { getSimilarity } from "../backend/bert-call";
 import supermemo  from "../backend/SM2";
+import { SM2 } from "../src/components/sm2-page"
 import { convertToSM2Score } from "../backend/converter";
-=======
-import { SM2 } from "../src/components/sm2-page";
->>>>>>> develop
 
 function App() {
   const algorithmTable = {
