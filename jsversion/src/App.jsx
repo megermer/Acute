@@ -10,8 +10,8 @@ import { SM2AI } from "../src/components/sm2-bert-page";
 import data from './data.json';
 import { getSimilarity } from "../backend/bert-call";
 import supermemo  from "../backend/SM2";
+import { SM2 } from "../src/components/sm2-page"
 import { convertToSM2Score } from "../backend/converter";
-import { SM2 } from "../src/components/sm2-page";
 
 function App() {
   const algorithmTable = {
