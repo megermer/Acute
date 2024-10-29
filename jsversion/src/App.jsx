@@ -64,7 +64,8 @@ function App() {
   };
 
   const handleDataFomSM2AI = async(currentCard, userAnswer) => {
-    const bertScore =await getSimilarity(currentCard.answer, userAnswer);
+    const bertScore = await getSimilarity(currentCard.answer, userAnswer);
+    console.log('bert score: ', bertScore)
     const SM2Grade = convertToSM2Score(bertScore);
     const newCard = supermemo(currentCard, SM2Grade);
     handleCardChange(newCard);
@@ -100,10 +101,6 @@ function App() {
       console.error("Error fetching data:", error)
     }
   }
-
-  const checkCards = () => {
-    console.log("cards after useEffect runs", cards)
-  }
  
   return (
     <div id="root-page">
@@ -112,8 +109,6 @@ function App() {
       </navbar>
       <div id="content">
         <button onClick={deleteLocalStorage}>Test</button>
-        <button onClick={checkCards}>check cards</button>
-
         {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
           <SM2AI onData={handleDataFomSM2AI} cards={cards} />
         ) : algorithmTable[selectedAlgorithm] === "SM2" ? (

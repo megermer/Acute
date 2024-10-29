@@ -6,7 +6,6 @@ import { BertCard } from "./card";
 
 export const SM2AI = ({ onData, cards }) => {
   const deck = cards;
-  console.log("cards", cards)
   const [displayAnswer, setDisplayAnswer] = useState(false);
   const [showDisabled, setShowDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
