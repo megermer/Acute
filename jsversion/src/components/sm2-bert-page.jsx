@@ -4,7 +4,8 @@ import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import { BertCard } from "./card";
 
-export const SM2AI = ({ onData }) => {
+export const SM2AI = ({ onData, cards }) => {
+  const deck = cards;
   const [displayAnswer, setDisplayAnswer] = useState(false);
   const [showDisabled, setShowDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
@@ -17,12 +18,6 @@ export const SM2AI = ({ onData }) => {
   useEffect(() => {
     localStorage.setItem("userInput", userInput);
   }, [userInput]);
-
-  const tutorialCard = {
-    question: "BERT This is a bert question card",
-    answer: "BERT This is a bert answer card",
-    id: 1,
-  };
 
   const sendDataToParent = () => {
     if (!nextDisabled) {
@@ -51,8 +46,7 @@ export const SM2AI = ({ onData }) => {
   return (
     <div className="template-container">
       <BertCard
-        tutorialCard={tutorialCard}
-        displayAnswer={displayAnswer}
+        card={deck[0]}
         onData={handleUserInput}
       />
       <Stack direction="row" spacing={2} id="buttons">

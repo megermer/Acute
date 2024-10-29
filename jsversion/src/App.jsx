@@ -29,7 +29,7 @@ function App() {
   });
 
   // Set cards 
-  const [cards, setCards] = useState([{}]);
+  const [cards, setCards] = useState();
 
   const handleCardChange = (newCard) => {
       let rearrangedCards = [...cards]
@@ -50,6 +50,7 @@ function App() {
       }
 
       setCards(rearrangedCards);
+      setCardToDisplay(rearrangedCards[0]);
   }
   
   useEffect(() => {
@@ -63,7 +64,8 @@ function App() {
   };
 
   const handleDataFomSM2AI = async(currentCard, userAnswer) => {
-    const bertScore =await getSimilarity(currentCard.answer, userAnser);
+    const bertScore = await getSimilarity(currentCard.answer, userAnswer);
+    console.log('bert score: ', bertScore)
     const SM2Grade = convertToSM2Score(bertScore);
     const newCard = supermemo(currentCard, SM2Grade);
     handleCardChange(newCard);
@@ -78,18 +80,23 @@ function App() {
     setSelectedAlgorithm(0);
   };
 
-  const convertDataToCardObject = async() => {
+  
+  useEffect(() => {
+    const initialCards = convertDataToCardObject(data);
+    console.log("initial cards: ", initialCards)
+    setCards(initialCards);
+  }, []);
+
+
+  const convertDataToCardObject = (data) => {
     try {
       const updatedCards = data.map(card => ({
         ...card, 
         interval: 0,
         repetition: 0,
-        efactor: 2.5, 
-        introStage: true
+        efactor: 2.5
       }))
-      setCards(() => {
-        return updatedCards;
-      })
+      return updatedCards
     } catch (error) {
       console.error("Error fetching data:", error)
     }
@@ -103,9 +110,9 @@ function App() {
       <div id="content">
         <button onClick={deleteLocalStorage}>Test</button>
         {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
-          <SM2AI onData={handleDataFomSM2AI} />
+          <SM2AI onData={handleDataFomSM2AI} cards={cards} />
         ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-          <SM2 onData={handleDataFomSM2} />
+          <SM2 onData={handleDataFomSM2} cards={cards}/>
         ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
           <BertTutorial onData={handleDataDisplayPage} />
         ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
