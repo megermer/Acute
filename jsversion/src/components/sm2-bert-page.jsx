@@ -10,6 +10,7 @@ export const SM2AI = ({ onData, cards }) => {
   const [showDisabled, setShowDisabled] = useState(true);
   const [nextDisabled, setNextDisabled] = useState(true);
 
+
   // User input for SM2-AI Tutorial
   const [userInput, setUserInput] = useState(() => {
     return localStorage.getItem("userInput") || "";
@@ -23,8 +24,10 @@ export const SM2AI = ({ onData, cards }) => {
     if (!nextDisabled) {
       // Tells App.jsx that current card has been reviewed
       let cardOver = true;
-      onData(cardOver);
-      alert("Check comment in sendDataToParent() in sm2-bert-page.jsx")
+      onData(userInput, cardOver);
+      cardOver = false
+      // alert("Check comment in sendDataToParent() in sm2-bert-page.jsx")
+      setDisplayAnswer((prev) => !prev);
     }
   };
 
@@ -48,6 +51,7 @@ export const SM2AI = ({ onData, cards }) => {
       <BertCard
         card={deck[0]}
         onData={handleUserInput}
+        displayAnswer={displayAnswer}
       />
       <Stack direction="row" spacing={2} id="buttons">
         <Button

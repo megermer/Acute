@@ -18,10 +18,10 @@ export const BertTutorial = ({ onData }) => {
     localStorage.setItem("userInput", userInput);
   }, [userInput]);
 
-  const tutorialCard = [{
+  const tutorialCard = {
     question: "TUTORIAL This is a bert question card",
     answer: "TUTORIAL This is a bert answer card",
-  }];
+  };
 
   const sendDataToParent = () => {
     if (!nextDisabled) {

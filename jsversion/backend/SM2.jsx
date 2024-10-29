@@ -24,6 +24,8 @@ export default function supermemo(item, grade) {
     let nextRepetition;
     let nextEfactor;
   
+    console.log('item.efactor: ', item.efactor)
+    console.log('grade', grade)
     if (grade >= 2) {
       if (item.repetition === 0) {
         nextInterval = 1;   // Whenever we see the card next
@@ -44,6 +46,7 @@ export default function supermemo(item, grade) {
 
     if (nextEfactor < 1.3) nextEfactor = 1.3;
   
+    console.log("new efactor", nextEfactor)
 
     return {
       interval: nextInterval,
