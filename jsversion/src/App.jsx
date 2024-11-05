@@ -10,6 +10,7 @@ import { getSimilarity } from "../backend/bert-call";
 import supermemo  from "../backend/SM2";
 import { SM2 } from "../src/components/sm2-page"
 import { convertToSM2Score } from "../backend/converter";
+import {CompletePage} from "../src/components/complete"
 
 function App() {
   const algorithmTable = {
@@ -18,6 +19,7 @@ function App() {
     2: "SM2AI",
     3: "SM2TUTORIAL",
     4: "SM2AITUTORIAL",
+    5: "COMPLETEPAGE"
   };
 
   // Select Algorithm page to be displayed
@@ -43,7 +45,7 @@ function App() {
       rearrangedCards.splice(index, 0, newCard);
       rearrangedCards.shift();
       if (rearrangedCards.every((card) => card.efactor > 2.3)) {
-        console.log("Study session complete")
+        setSelectedAlgorithm(5)
       }
       console.log("rearranged cards after shifts: ", rearrangedCards)
       setCards(rearrangedCards);
@@ -110,17 +112,19 @@ function App() {
         <p>Acute</p>
       </navbar>
       <div id="content">
-        <button onClick={deleteLocalStorage}>Test</button>
+        <button onClick={deleteLocalStorage}>Refresh Page</button>
         {algorithmTable[selectedAlgorithm] === "SM2AI" ? (
           <SM2AI onData={handleDataFomSM2AI} cards={cards} />
         ) : algorithmTable[selectedAlgorithm] === "SM2" ? (
-          <SM2 onData={handleDataFomSM2} cards={cards}/>
+          <SM2 onData={handleDataFomSM2} cards={cards} />
         ) : algorithmTable[selectedAlgorithm] === "SM2AITUTORIAL" ? (
           <BertTutorial onData={handleDataDisplayPage} />
         ) : algorithmTable[selectedAlgorithm] === "SM2TUTORIAL" ? (
           <SM2Tutorial onData={handleDataDisplayPage} />
-        ) : (
+        ) : algorithmTable[selectedAlgorithm] === "SELECT" ? (
           <SelectPage onData={handleDataDisplayPage} />
+        ) : (
+          <CompletePage />
         )}
       </div>
     </div>
