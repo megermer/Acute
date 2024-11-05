@@ -46,8 +46,9 @@ export const BertCard = ({ displayAnswer, onData, nextDisabled, card }) => {
   );
 };
 
-export const Sm2Card = ({ tutorialCard, displayAnswer }) => {
-  let displayedCard = tutorialCard;
+export const Sm2Card = ({ card, displayAnswer }) => {
+  let displayedCard = card;
+  console.log('displayedCard.question: ', displayedCard.question)
   let displayingAnswer = displayAnswer;
 
   return (

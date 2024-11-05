@@ -30,18 +30,13 @@ function App() {
   const [cards, setCards] = useState();
 
   const handleCardChange = (newCard) => {
-      console.log("handleCardChange() entered")
       let rearrangedCards = [...cards]
-      console.log("rearrangedCards: ", rearrangedCards)
       let index;
       if (newCard.efactor < 2) { // Hard
-        console.log("if entered")
         index = 5;
       } else if (newCard.efactor < 2.25) { // Medium
-        console.log("2nd elseif entered")
         index = Math.floor(Math.random() * (19 - 10)) + 10;
       } else if (newCard.efactor < 3) { // Easy
-        console.log("3rd elseif entered")
         index = Math.floor(Math.random() * (29 - 20)) + 20;
       }
 
@@ -70,18 +65,17 @@ function App() {
       if (bertScore < 0) {
         bertScore = 0.1;
       }
-      console.log('bert score: ', bertScore)
       const SM2Grade = await convertToSM2Score(bertScore.similarity_score);
-      console.log(SM2Grade)
       const newCard = supermemo(cards[0], SM2Grade);
-      console.log('new card with adjusted efactors etc.: ', newCard)
       handleCardChange(newCard);
     }
   }
 
-  const handleDataFomSM2 = (currentCard, SM2Grade) => {
-    const newCard = supermemo(currentCard, SM2Grade);
-    handleCardChange(newCard);
+  const handleDataFomSM2 = (SM2Grade, cardOver) => {
+    if (cardOver) {
+      const newCard = supermemo(cards[0], SM2Grade);
+      handleCardChange(newCard)
+    }
   }
 
   const deleteLocalStorage = () => {
