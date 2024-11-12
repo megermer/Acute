@@ -1,21 +1,24 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 
-export const BertCard = ({ displayAnswer, onData, nextDisabled, card }) => {
+export const BertCard = ({ card, onData, displayAnswer, nextDisabled, clearText }) => {
   let displayedCard = card;
   let displayingAnswer = displayAnswer;
-  let disableText = nextDisabled
+  let disableText = nextDisabled;
 
   let [userInput, setUserInput] = useState("");
+
+  useEffect(() => {
+    if (clearText == true) {
+      setUserInput("");
+    }
+  });
 
   const sendDataToParent = (event) => {
     setUserInput(event.target.value);
     onData(event.target.value);
   };
-
-  console.log('displayed card: ',displayedCard)
-
 
   return (
     <div id="card-container">
@@ -48,7 +51,7 @@ export const BertCard = ({ displayAnswer, onData, nextDisabled, card }) => {
 
 export const Sm2Card = ({ card, displayAnswer }) => {
   let displayedCard = card;
-  console.log('displayedCard.question: ', displayedCard.question)
+  console.log("displayedCard.question: ", displayedCard.question);
   let displayingAnswer = displayAnswer;
 
   return (

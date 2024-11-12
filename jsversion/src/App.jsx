@@ -47,7 +47,7 @@ function App() {
       if (rearrangedCards.every((card) => card.efactor > 2.3)) {
         setSelectedAlgorithm(5)
       }
-      console.log("rearranged cards after shifts: ", rearrangedCards)
+      // console.log("rearranged cards after shifts: ", rearrangedCards)
       setCards(rearrangedCards);
   }
   
