@@ -32,24 +32,24 @@ function App() {
   const [cards, setCards] = useState();
 
   const handleCardChange = (newCard) => {
-      let rearrangedCards = [...cards]
-      let index;
-      if (newCard.efactor < 2) { // Hard
-        index = 5;
-      } else if (newCard.efactor < 2.25) { // Medium
-        index = Math.floor(Math.random() * (19 - 10)) + 10;
-      } else if (newCard.efactor < 3) { // Easy
-        index = Math.floor(Math.random() * (29 - 20)) + 20;
-      }
+    let rearrangedCards = [...cards]
+    let index;
+    if (newCard.efactor < 2) { // Hard
+      index = 5;
+    } else if (newCard.efactor < 2.5) { // Medium
+      index = Math.floor(Math.random() * (19 - 10)) + 10;
+    } else if (newCard.efactor < 3) { // Easy
+      index = Math.floor(Math.random() * (29 - 20)) + 20;
+    }
 
-      rearrangedCards.splice(index, 0, newCard);
-      rearrangedCards.shift();
-      if (rearrangedCards.every((card) => card.efactor > 2.3)) {
-        setSelectedAlgorithm(5)
-      }
-      // console.log("rearranged cards after shifts: ", rearrangedCards)
-      setCards(rearrangedCards);
-  }
+    rearrangedCards.splice(index, 0, newCard);
+    rearrangedCards.shift();
+    if (rearrangedCards.every((card) => (card.efactor > 2.5 && card.repetition > 4))) {
+      setSelectedAlgorithm(5)
+    }
+    // console.log("rearranged cards after shifts: ", rearrangedCards)
+    setCards(rearrangedCards);
+}
   
   useEffect(() => {
     localStorage.setItem("selectedAlgorithm", selectedAlgorithm);

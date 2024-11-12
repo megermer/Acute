@@ -1,153 +1,152 @@
 [
-    {
-      "id": 0,
-      "question": "Why do birds fly backward on Tuesdays?",
-      "answer": "The wind patterns on that day reverse due to planetary alignment."
-    },
-    {
-      "id": 1,
-      "question": "What causes shadows to turn blue at night?",
-      "answer": "The moon's magnetic field alters the light reflection off surfaces."
-    },
-    {
-      "id": 2,
-      "question": "How do clouds decide when to rain cinnamon?",
-      "answer": "A rare atmospheric phenomenon combines humidity with cinnamon trees."
-    },
-    {
-      "id": 3,
-      "question": "Why do dolphins prefer classical music over jazz?",
-      "answer": "Their sonar frequencies resonate more harmoniously with classical compositions."
-    },
-    {
-      "id": 4,
-      "question": "How do trees communicate using Morse code?",
-      "answer": "They tap their roots underground in patterns resembling Morse code."
-    },
-    {
-      "id": 5,
-      "question": "Why does time travel only work on Sundays?",
-      "answer": "The Earth's gravitational pull is weakest, allowing for temporal distortion."
-    },
-    {
-      "id": 6,
-      "question": "What makes tomatoes glow in the dark during summer solstice?",
-      "answer": "A rare enzyme in tomatoes reacts with the increased UV exposure."
-    },
-    {
-      "id": 7,
-      "question": "Why do bees refuse to work on national holidays?",
-      "answer": "Bees have a highly developed sense of human culture and respect holidays."
-    },
-    {
-      "id": 8,
-      "question": "How do ants predict stock market crashes?",
-      "answer": "Their antennae can sense minute vibrations in global economic trends."
-    },
-    {
-      "id": 9,
-      "question": "Why do flamingos dance in perfect synchronization during full moons?",
-      "answer": "The lunar cycles affect their inner balance, leading to synchronized movements."
-    },
-    {
-      "id": 10,
-      "question": "What makes rocks sing during thunderstorms?",
-      "answer": "Friction from rain and lightning creates a frequency that vibrates through the rock’s minerals."
-    },
-    {
-      "id": 11,
-      "question": "Why does ice cream melt faster in the presence of puppies?",
-      "answer": "Puppies generate higher levels of warmth and happiness, accelerating the melting process."
-    },
-    {
-      "id": 12,
-      "question": "How do mountains grow by 2 inches every decade?",
-      "answer": "Subterranean volcanic activity gradually pushes the land upwards over time."
-    },
-    {
-      "id": 13,
-      "question": "Why does chocolate taste sweeter when eaten at midnight?",
-      "answer": "Circadian rhythms influence taste perception, enhancing sweetness during late hours."
-    },
-    {
-      "id": 14,
-      "question": "What makes magnets lose their magnetism when near giraffes?",
-      "answer": "Giraffes emit a bio-electric field that disrupts magnetic polarity."
-    },
-    {
-      "id": 15,
-      "question": "Why do unicorns only appear in reflections of double rainbows?",
-      "answer": "Their energy aligns with the dual light spectrum created by double rainbows."
-    },
-    {
-      "id": 16,
-      "question": "How does coffee grant temporary invisibility?",
-      "answer": "The unique combination of caffeine and sugar bends light around the drinker."
-    },
-    {
-      "id": 17,
-      "question": "Why do mushrooms glow when there's no moonlight?",
-      "answer": "They absorb ambient starlight, storing it for use in dark conditions."
-    },
-    {
-      "id": 18,
-      "question": "What makes jellyfish able to conduct symphonies underwater?",
-      "answer": "Their bioluminescence creates harmonic waves that mimic musical patterns."
-    },
-    {
-      "id": 19,
-      "question": "Why do cows form perfect geometric shapes when grazing?",
-      "answer": "Their internal compass aligns with Earth's geomagnetic fields, guiding them."
-    },
-    {
-      "id": 20,
-      "question": "How do butterflies control weather patterns?",
-      "answer": "Their wings generate microscopic air currents that influence global weather systems."
-    },
-    {
-      "id": 21,
-      "question": "What causes trees to sprout candy canes in December?",
-      "answer": "The winter solstice activates latent sugar-producing cells within their bark."
-    },
-    {
-      "id": 22,
-      "question": "Why do clocks run backwards in space?",
-      "answer": "Time behaves differently without Earth's atmosphere, causing clocks to reverse."
-    },
-    {
-      "id": 23,
-      "question": "What allows goldfish to understand human languages?",
-      "answer": "Their auditory systems are finely tuned to vibrations that resemble speech."
-    },
-    {
-      "id": 24,
-      "question": "How do penguins teleport across the Antarctic?",
-      "answer": "They utilize ice-refraction portals created by shifting glaciers."
-    },
-    {
-      "id": 25,
-      "question": "Why do cats control Wi-Fi signals?",
-      "answer": "Their fur interacts with electromagnetic waves, giving them control over the frequency."
-    },
-    {
-      "id": 26,
-      "question": "What makes the Eiffel Tower invisible to certain species?",
-      "answer": "The tower emits an ultraviolet light spectrum only visible to specific insects."
-    },
-    {
-      "id": 27,
-      "question": "Why does water turn to jelly on leap years?",
-      "answer": "The additional day in February triggers molecular changes in H2O."
-    },
-    {
-      "id": 28,
-      "question": "How do fireflies use Morse code to communicate with stars?",
-      "answer": "Their flashes align with celestial light pulses in a shared language of light."
-    },
-    {
-      "id": 29,
-      "question": "Why do bumblebees have the ability to predict eclipses?",
-      "answer": "They sense minute changes in gravitational fields leading up to celestial events."
-    }
-  ]
-  
+  {
+    "id": 0,
+    "question": "What role does the sea play in The Old Man and the Sea?",
+    "answer": "It embodies the duality of nature."
+  },
+  {
+    "id": 1,
+    "question": "What were the main outcomes of the French Revolution?",
+    "answer": "The end of the monarchy, the rise of republicanism, and an influence on revolutions worldwide."
+  },
+  {
+    "id": 2,
+    "question": "How do central banks use monetary policy to influence inflation?",
+    "answer": "They adjust interest rates and control the money supply to manage inflation."
+  },
+  {
+    "id": 3,
+    "question": "How does Aristotle’s concept of eudaimonia differ from the modern idea of happiness?",
+    "answer": "It is a lifelong pursuit of fulfilling one’s potential through virtue and rational living."
+  },
+  {
+    "id": 4,
+    "question": "How does the Hammond postulate help predict reaction speed?",
+    "answer": "It helps predict if a reaction will be fast or slow."
+  },
+  {
+    "id": 5,
+    "question": "In Taoism, how is the concept of 'wu wei' (non-action) practiced in daily life?",
+    "answer": "It involves acting in harmony with nature and spontaneity."
+  },
+  {
+    "id": 6,
+    "question": "What role did the Dreyfus Affair play in the development of modern antisemitism in Europe?",
+    "answer": "It exposed antisemitism in France and led to a rise in nationalist sentiments."
+  },
+  {
+    "id": 7,
+    "question": "What is the significance of the Phillips Curve in understanding inflation and unemployment?",
+    "answer": "It illustrates the inverse relationship between inflation and unemployment, suggesting that lower unemployment can lead to higher inflation."
+  },
+  {
+    "id": 8,
+    "question": "What is the difference between fiscal policy and monetary policy?",
+    "answer": "Fiscal policy involves government spending and taxation decisions, while monetary policy is conducted by central banks to manage the money supply and interest rates."
+  },
+  {
+    "id": 9,
+    "question": "How does irony add depth to a story?",
+    "answer": "It shows a contrast between appearance and reality."
+  },
+  {
+    "id": 10,
+    "question": "How does Kant’s categorical imperative guide moral decision-making?",
+    "answer": "It states that actions are universally applicable."
+  },
+  {
+    "id": 11,
+    "question": "Why is a carboxylic acid more acidic than an ester?",
+    "answer": "It can stabilize the negative charge after losing a proton better than an ester can."
+  },
+  {
+    "id": 12,
+    "question": "What is the significance of the Pact of Umar in Islamic history?",
+    "answer": "It established guidelines for the treatment of non-Muslims in Islamic territories."
+  },
+  {
+    "id": 13,
+    "question": "In Nietzsche’s philosophy, what does 'Übermensch' represent?",
+    "answer": "It is an ideal person who creates their own values and lives authentically."
+  },
+  {
+    "id": 14,
+    "question": "What does the conch shell represent in Lord of the Flies?",
+    "answer": "It symbolizes order, civilization, and authority."
+  },
+  {
+    "id": 15,
+    "question": "What role does the Guru Granth Sahib play in Sikh worship and daily life?",
+    "answer": "It offers spiritual guidance and is central in daily prayers and ceremonies."
+  },
+  {
+    "id": 16,
+    "question": "How do keto and enol forms relate to each other?",
+    "answer": "They can switch back and forth, with the keto form usually being more stable."
+  },
+  {
+    "id": 17,
+    "question": "What was the significance of the Sykes-Picot Agreement in the context of Middle Eastern geopolitics?",
+    "answer": "It divided the Ottoman Empire's Arab provinces between Britain and France."
+  },
+  {
+    "id": 18,
+    "question": "What role do derivatives play in modern financial markets?",
+    "answer": "They allow investors to hedge risk and speculate on price movements."
+  },
+  {
+    "id": 19,
+    "question": "In Mahayana Buddhism, what is the significance of the bodhisattva vow?",
+    "answer": "It is a commitment to remain in the cycle of rebirth to help all beings reach enlightenment before seeking personal liberation."
+  },
+  {
+    "id": 20,
+    "question": "In Shinto, what is the role of 'kami' (spirits) in relation to nature?",
+    "answer": "They inhabit natural elements like mountains, rivers, and trees."
+  },
+  {
+    "id": 21,
+    "question": "How did the policies of Gorbachev lead to the end of the Cold War?",
+    "answer": "His reforms encouraged political freedom and economic change, ultimately leading to the collapse of the Soviet Union."
+  },
+  {
+    "id": 22,
+    "question": "In 1984, what does Big Brother represent?",
+    "answer": "The oppressive control of the Party and the loss of personal freedom in a totalitarian state."
+  },
+  {
+    "id": 23,
+    "question": "How does an electronegative atom nearby affect acidity?",
+    "answer": "It pulls electron density away, making the molecule more acidic."
+  },
+  {
+    "id": 24,
+    "question": "How does the concept of 'Tikkun Olam' (repairing the world) influence Jewish ethical practices?",
+    "answer": "It encourages Jews to pursue social justice and community service."
+  },
+  {
+    "id": 25,
+    "question": "What is quantitative easing?",
+    "answer": "It is a non-traditional monetary policy where central banks purchase government securities and other financial assets to increase the money supply."
+  },
+  {
+    "id": 26,
+    "question": "Why do amides resist rotation around their bonds?",
+    "answer": "Amides have some double-bond character in the bond between nitrogen and carbon, which stops rotation."
+  },
+  {
+    "id": 27,
+    "question": "What is René Descartes’ famous statement 'Cogito, ergo sum' meant to prove?",
+    "answer": "It is his foundational proof of existence."
+  },
+  {
+    "id": 28,
+    "question": "What is the main purpose of foreshadowing in a story?",
+    "answer": "It builds suspense and prepares readers for twists."
+  },
+  {
+    "id": 29,
+    "question": "In Plato’s Allegory of the Cave, what does the process of leaving the cave symbolize?",
+    "answer": "It represents the journey from ignorance to enlightenment."
+  }
+]
