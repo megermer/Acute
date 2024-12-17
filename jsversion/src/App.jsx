@@ -49,6 +49,7 @@ function App() {
     }
     // console.log("rearranged cards after shifts: ", rearrangedCards)
     setCards(rearrangedCards);
+    console.log(rearrangedCards)
 }
   
   useEffect(() => {
@@ -57,7 +58,7 @@ function App() {
 
   // Page display data from components
   const handleDataDisplayPage = (data) => {
-    console.log("page selected: ", data);
+    // console.log("page selected: ", data);
     setSelectedAlgorithm(data);
   };
 
@@ -87,7 +88,7 @@ function App() {
   
   useEffect(() => {
     const initialCards = convertDataToCardObject(data);
-    console.log("initial cards: ", initialCards)
+    // console.log("initial cards: ", initialCards)
     setCards(initialCards);
   }, []);
 

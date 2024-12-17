@@ -19,8 +19,8 @@ export const BertTutorial = ({ onData }) => {
   }, [userInput]);
 
   const tutorialCard = {
-    question: "TUTORIAL This is a bert question card",
-    answer: "TUTORIAL This is a bert answer card",
+    question: "TUTORIAL: The front of the card will appear here. Try to recall the information on the back of the card, and input the answer.",
+    answer: "TUTORIAL: The back of the card will appear here.",
   };
 
   const sendDataToParent = () => {
