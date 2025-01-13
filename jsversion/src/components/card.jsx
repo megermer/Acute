@@ -51,7 +51,6 @@ export const BertCard = ({ card, onData, displayAnswer, nextDisabled, clearText 
 
 export const Sm2Card = ({ card, displayAnswer }) => {
   let displayedCard = card;
-  console.log("displayedCard.question: ", displayedCard.question);
   let displayingAnswer = displayAnswer;
 
   return (
