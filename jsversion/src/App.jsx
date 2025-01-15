@@ -34,20 +34,20 @@ function App() {
   const handleCardChange = (newCard) => {
     let rearrangedCards = [...cards]
     let index;
-    if (newCard.efactor < 2) { // Hard
-      index = 5;
-    } else if (newCard.efactor < 2.5) { // Medium
-      index = Math.floor(Math.random() * (19 - 10)) + 10;
-    } else if (newCard.efactor < 3) { // Easy
-      index = Math.floor(Math.random() * (29 - 20)) + 20;
+    if (newCard.efactor < 2.48 || newCard.repetition < 2) { // Hard or new
+      index = 5; // Move to beginning
+    } else if (newCard.efactor < 2.54) { // Medium
+      index = Math.floor(Math.random() * (19 - 10)) + 10; // Move to the middle
+    } else { // Easy
+      index = Math.floor(Math.random() * (29 - 20)) + 20; // Move to the back
     }
 
     rearrangedCards.splice(index, 0, newCard);
     rearrangedCards.shift();
-    if (rearrangedCards.every((card) => (card.efactor > 2.5 && card.repetition > 4))) {
+    if (rearrangedCards.every((card) => (card.efactor > 2.71 && card.repetition > 3))) {
       setSelectedAlgorithm(5)
     }
-    // console.log("rearranged cards after shifts: ", rearrangedCards)
+    console.log("rearranged cards after shifts: ", rearrangedCards)
     setCards(rearrangedCards);
     console.log(rearrangedCards)
 }
@@ -65,6 +65,7 @@ function App() {
   const handleDataFomSM2AI = async(userAnswer, cardOver) => {
     if (cardOver){
       let bertScore = await getSimilarity(cards[0].answer, userAnswer);
+      console.log('bert similarity score: ', bertScore)
       if (bertScore < 0) {
         bertScore = 0.1;
       }

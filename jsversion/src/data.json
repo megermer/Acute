@@ -2,17 +2,17 @@
   {
     "id": 0,
     "question": "What role does the sea play in The Old Man and the Sea?",
-    "answer": "It embodies the duality of nature."
+    "answer": "The duality of nature."
   },
   {
     "id": 1,
     "question": "What were the main outcomes of the French Revolution?",
-    "answer": "The end of the monarchy, the rise of republicanism, and an influence on revolutions worldwide."
+    "answer": "The end of the monarchy and the rise of republicanism."
   },
   {
     "id": 2,
     "question": "How do central banks use monetary policy to influence inflation?",
-    "answer": "They adjust interest rates and control the money supply to manage inflation."
+    "answer": "They adjust interest rates and control the money supply."
   },
   {
     "id": 3,
@@ -37,12 +37,12 @@
   {
     "id": 7,
     "question": "What is the significance of the Phillips Curve in understanding inflation and unemployment?",
-    "answer": "It illustrates the inverse relationship between inflation and unemployment, suggesting that lower unemployment can lead to higher inflation."
+    "answer": "It illustrates the inverse relationship between inflation and unemployment."
   },
   {
     "id": 8,
     "question": "What is the difference between fiscal policy and monetary policy?",
-    "answer": "Fiscal policy involves government spending and taxation decisions, while monetary policy is conducted by central banks to manage the money supply and interest rates."
+    "answer": "Fiscal policy involves government spending, while monetary policy is conducted by central banks."
   },
   {
     "id": 9,
@@ -82,7 +82,7 @@
   {
     "id": 16,
     "question": "How do keto and enol forms relate to each other?",
-    "answer": "They can switch back and forth, with the keto form usually being more stable."
+    "answer": "They can switch back and forth."
   },
   {
     "id": 17,
@@ -97,7 +97,7 @@
   {
     "id": 19,
     "question": "In Mahayana Buddhism, what is the significance of the bodhisattva vow?",
-    "answer": "It is a commitment to remain in the cycle of rebirth to help all beings reach enlightenment before seeking personal liberation."
+    "answer": "It is a commitment to remain in the cycle of rebirth."
   },
   {
     "id": 20,
@@ -107,12 +107,12 @@
   {
     "id": 21,
     "question": "How did the policies of Gorbachev lead to the end of the Cold War?",
-    "answer": "His reforms encouraged political freedom and economic change, ultimately leading to the collapse of the Soviet Union."
+    "answer": "His reforms encouraged political freedom and economic change."
   },
   {
     "id": 22,
     "question": "In 1984, what does Big Brother represent?",
-    "answer": "The oppressive control of the Party and the loss of personal freedom in a totalitarian state."
+    "answer": "The oppressive control of the Party and the loss of personal freedom."
   },
   {
     "id": 23,
@@ -127,7 +127,7 @@
   {
     "id": 25,
     "question": "What is quantitative easing?",
-    "answer": "It is a non-traditional monetary policy where central banks purchase government securities and other financial assets to increase the money supply."
+    "answer": "It is a non-traditional monetary policy where central banks purchase government securities."
   },
   {
     "id": 26,
