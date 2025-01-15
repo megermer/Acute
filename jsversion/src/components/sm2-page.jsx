@@ -34,7 +34,7 @@ export const SM2 = ({ onData, cards }) => {
               onClick={() => sendDataToParent(0)}
               sx={{ bgcolor: "#1976d2" }}
             >
-              Impossible
+              Again
             </Button>
             <Button
               variant="contained"
@@ -50,7 +50,7 @@ export const SM2 = ({ onData, cards }) => {
               onClick={() => sendDataToParent(2)}
               sx={{ bgcolor: "#1976d2" }}
             >
-              Normal
+              Good
             </Button>
             <Button
               variant="contained"

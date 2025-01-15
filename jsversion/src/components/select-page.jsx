@@ -22,7 +22,7 @@ export const SelectPage = ({ onData }) => {
   // Send selectedPage to parent
   const sendDataToParent = () => {
     if (selectedPage !== 0) {
-      console.log(`sending ${selectedPage}`);
+      // console.log(`sending ${selectedPage}`);
       onData(selectedPage); // Send the selectedPage to the parent
     }
   };

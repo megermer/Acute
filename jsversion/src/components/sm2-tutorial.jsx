@@ -8,8 +8,8 @@ export const SM2Tutorial = ({ onData }) => {
   const [displayAnswer, setDisplayAnswer] = useState(false);
 
   const tutorialCard = {
-    question: "TUTORIAL This is a SM2 question card",
-    answer: "TUTORIAL This is a SM2 question card",
+    question: "TUTORIAL: The front of the card will appear here. Try to recall the information on the back of the card",
+    answer: "TUTORIAL: The back of the card will appear here. Select the option below based on how close you were to the answer",
   }
 
   const sendDataToParent = () => {
@@ -29,7 +29,7 @@ export const SM2Tutorial = ({ onData }) => {
               onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
-              Impossible
+              Again
             </Button>
             <Button
               variant="contained"
@@ -45,7 +45,7 @@ export const SM2Tutorial = ({ onData }) => {
               onClick={sendDataToParent}
               sx={{ bgcolor: "#1976d2" }}
             >
-              Normal
+              Good
             </Button>
             <Button
               variant="contained"

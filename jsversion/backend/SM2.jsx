@@ -22,8 +22,8 @@ export default function supermemo(item, grade) {
     let nextRepetition;
     let nextEfactor;
   
-    console.log('item.efactor: ', item.efactor)
-    console.log('grade', grade)
+    // console.log('item.efactor: ', item.efactor)
+    // console.log('grade', grade)
     if (grade >= 2) {
       nextRepetition = item.repetition + 1;
     } else {
