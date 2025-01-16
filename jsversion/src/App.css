@@ -5,7 +5,7 @@ div {
   padding: 0px;
 }
 
-navbar {
+nav {
   height: 5%;
   width: 100%;
   display: flex;
@@ -22,7 +22,7 @@ navbar {
   flex-direction: column;
 }
 
-navbar > p {
+nav > p {
   margin: 0.5rem 0 0 1rem;
   font-size: 2rem;
   letter-spacing: 1rem;
@@ -111,7 +111,7 @@ navbar > p {
 #buttons {
   display: flex;
   width: 30%;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 #buttons-sm2 {
