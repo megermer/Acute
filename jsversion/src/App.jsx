@@ -43,7 +43,7 @@ function App() {
       index = Math.floor(Math.random() * (19 - 10)) + 10; // Move to the middle
     } else {
       // Easy
-      index = Math.floor(Math.random() * (29 - 20)) + 20; // Move to the back
+      index = 30; // Move to the back
     }
 
     rearrangedCards.splice(index, 0, newCard);
