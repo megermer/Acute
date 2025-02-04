@@ -50,7 +50,7 @@ function App() {
     rearrangedCards.shift();
     if (
       rearrangedCards.every(
-        (card) => card.efactor > 2.71 && card.repetition > 3
+        (card) => card.efactor > 2.71 && card.repetition > 2
       )
     ) {
       setSelectedAlgorithm(5);
