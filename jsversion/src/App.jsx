@@ -38,7 +38,7 @@ function App() {
     if (newCard.efactor < 2.48 || newCard.repetition < 2) {
       // Hard or new
       index = 5; // Move to beginning
-    } else if (newCard.efactor < 2.54) {
+    } else if (newCard.efactor < 2.71) {
       // Medium
       index = Math.floor(Math.random() * (19 - 10)) + 10; // Move to the middle
     } else {
@@ -50,7 +50,7 @@ function App() {
     rearrangedCards.shift();
     if (
       rearrangedCards.every(
-        (card) => card.efactor > 2.71 && card.repetition > 2
+        (card) => card.efactor > 2.70 && card.repetition > 1
       )
     ) {
       setSelectedAlgorithm(5);
